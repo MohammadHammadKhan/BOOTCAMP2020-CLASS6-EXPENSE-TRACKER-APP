@@ -1,12 +1,7 @@
 import React, { createContext,useContext } from 'react';
 
 const transactions=[10,20,30,-10,-5];
-// const initialState={
-//     transactions:[{id:1, description:'books', transactionAmount:300},
-//                   {id:2, description:'books', transactionAmount:400}
 
-//     ]
-//  }
 const initialState={
     transactions:[ ]
  }
@@ -19,16 +14,20 @@ const globalContext=createContext(initialState,()=>{});
 
 export let ValueReducer=(state, action)=>{
     let addTransaction=useContext(globalContext);
-        action.transactionAmount>0?
+        
+        if(action.type!='DelTrans'){
                                  (addTransaction[1](
                                      [...addTransaction[0],{
                                      id:action.id,
                                      description:action.description,
                                      transactionAmount:action.transactionAmount                                
-                                         }])):
-                                (addTransaction[1](
-                                     [...addTransaction[0],state.filter(transaction=>transaction.id!=action.id) ]))
-         
+                                         }]))}
+                                
+        if(action.type=='DelTrans'){
+                                 (addTransaction[1](
+                                     [...addTransaction[0]=addTransaction[0].filter(transaction=>transaction.id!=action.id)]))
+                                     console.log(`dispatch for deltrans start:${action.id}`)
+                                   } 
          switch (action.type){
              case 'AddTrans':
                  return [...state,{
@@ -36,12 +35,11 @@ export let ValueReducer=(state, action)=>{
                                  description:action.description,
                                  transactionAmount:action.transactionAmount
                          
-                              }]
+                                  }]
                          
              case 'DelTrans':
-                 return [...state,
-                    state.filter(transaction=>transaction.id!=action.id)]
-                              }
-                              };
+                 return [...state=state.filter(transaction=>transaction.id!=action.id)]
+                                  }
+                                  };
 
 export default globalContext;
