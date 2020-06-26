@@ -6,7 +6,7 @@ import globalContext,{ValueReducer} from './Context/ValueContext'
 function Transaction({ id, description,  transactionAmount}){
     let addTransaction=useContext(globalContext);
     let [state, dispatch]=useReducer(ValueReducer,addTransaction[0]);
-        {state}
+        
     function delTransfun(id){
         
         dispatch(
