@@ -1,9 +1,8 @@
-import React, { useState, createContext } from 'react';
+import React, { useState} from 'react';
 import './App.css';
 import globalContext from './Components/Context/ValueContext'
 import Header from './Components/Header';
 import Balance from './Components/Balance';
-import Transaction from './Components/Transaction';
 import { IncomeExpense } from './Components/IncomeExpense';
 import {AddTransaction} from './Components/AddTransaction'
 import { Footer } from './Components/Footer';
