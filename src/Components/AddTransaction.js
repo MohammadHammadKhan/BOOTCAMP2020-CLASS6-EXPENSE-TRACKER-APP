@@ -21,44 +21,9 @@ export const AddTransaction = () => {
                 transactionAmount:transactionAmount
 
             }
-        );console.log(`dispatch newtrans:${addTransaction.transactionAmount}`)
+        );
     };
 
-    // let [state, dispatch]=useReducer((state,action)=>{
-    //    action.transactionAmount>0?
-    //                                 (addTransaction[1](
-    //                                     [...addTransaction[0],{
-    //                                     id:action.id,
-    //                                     description:action.description,
-    //                                     transactionAmount:action.transactionAmount
-                                        
-    //                                     }])):
-    //                                 (addTransaction[1](
-    //                                     [...addTransaction[0],state.filter(transaction=>transaction.id!=action.id) ]))
-        
-    //     switch (action.type){
-    //         case 'AddTrans':
-    //             return [...state,{
-    //                             id:action.id,
-    //                             description:action.description,
-    //                             transactionAmount:action.transactionAmount
-                        
-    //                          }]
-                        
-    //         case 'DelTrans':
-    //             return [...state,
-    //                state.filter(transaction=>transaction.id!=action.id)            
-    //              ]
-    //             // return [...state,{
-    //             //                     state.filter(transaction=>transaction.transactions.id!=action.id)
-
-    //             //                      }
-
-    //             //             ]
-            
-    //                          }
-    //                          },[]);
-   
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -68,23 +33,13 @@ export const AddTransaction = () => {
                 transactionAmount:+transactionAmount
         }
         addTransaction=newTransaction;
-        console.log(`onsubmit newtrans:${addTransaction.transactionAmount}`)
-        // const dis=()=>{console.log(`dispatchs newtrans:${addTransaction.transactionAmount}`)
-        //     dispatch(
-        //                 { 
-        //                     type: 'AddTrans',
-        //                     id:addTransaction.id,
-        //                     description:addTransaction.description,
-        //                     transactionAmount:addTransaction.transactionAmount
-        //                 }
-        //             );
-           
+        
             addTransfun({
                         id:addTransaction.id,
                         description:addTransaction.description,
                         transactionAmount:addTransaction.transactionAmount});
                        
-    }
+                        }
 
 
 

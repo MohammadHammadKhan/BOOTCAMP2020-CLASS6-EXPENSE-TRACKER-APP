@@ -3,7 +3,7 @@ import React from 'react'
 export const Footer = () => {
     return (
         <div>
-            Designed by MHK
+            <h4>Designed by MHK</h4>
         </div>
     );
 }
