@@ -1,14 +1,7 @@
 import { createContext,useContext } from 'react';
-
-
-
 const initialState={
     transactions:[ ]
  }
-
-
-
-
 
 const globalContext=createContext(initialState,()=>{});
 
@@ -25,7 +18,7 @@ export let ValueReducer=(state, action)=>{
                                 
         if(action.type==='DelTrans'){
                                  (addTransaction[1](
-                                     [...addTransaction[0]=addTransaction[0].filter(transaction=>transaction.id!=action.id)]))
+                                     [...addTransaction[0]=addTransaction[0].filter(transaction=>transaction.id!==action.id)]))
                                      console.log(`dispatch for deltrans start:${action.id}`)
                                    } 
          switch (action.type){
@@ -38,7 +31,7 @@ export let ValueReducer=(state, action)=>{
                                   }]
                          
              case 'DelTrans':
-                 return [...state=state.filter(transaction=>transaction.id!=action.id)]
+                 return [...state=state.filter(transaction=>transaction.id!==action.id)]
             default:
                  return state;                     
                 

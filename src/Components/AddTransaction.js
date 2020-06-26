@@ -10,7 +10,7 @@ export const AddTransaction = () => {
 
     let addTransaction=useContext(globalContext);
     let [state, dispatch]=useReducer(ValueReducer,addTransaction[0]);
-
+    console.log(state);
     function addTransfun({id,description,transactionAmount}){
         dispatch(
             {
