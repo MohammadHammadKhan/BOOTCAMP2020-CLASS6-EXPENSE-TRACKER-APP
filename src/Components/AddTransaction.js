@@ -1,5 +1,4 @@
 import React, { useState, useContext, useReducer } from 'react'
-import Transaction from './Transaction'
 import globalContext from './Context/ValueContext'
 import {ValueReducer} from './Context/ValueContext'
 
