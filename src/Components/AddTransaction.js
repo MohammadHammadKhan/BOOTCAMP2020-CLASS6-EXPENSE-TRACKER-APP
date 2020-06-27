@@ -67,6 +67,7 @@ export const AddTransaction = () => {
                     type="number"
                     id='transactionamount'
                     value={transactionAmount}
+                    step='0.01'
                     onChange={(e)=>{settransactionAmount(e.target.value)}}
                     placeholder='Transaction Amount in USD'
                     required='required'

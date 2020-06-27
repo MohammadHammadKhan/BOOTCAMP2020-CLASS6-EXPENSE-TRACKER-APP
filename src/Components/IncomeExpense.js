@@ -8,10 +8,10 @@ export const IncomeExpense = () => {
 
         const transactionAmounts=transactions[0].map(transaction=>transaction.transactionAmount);
         const income=transactionAmounts.filter(transaction=>transaction>0)
-                                      .reduce((acc,transaction)=>(acc=acc+transaction),0);
+                                      .reduce((acc,transaction)=>(acc=acc+transaction),0).toFixed(2);
                                              
         const expense=transactionAmounts.filter(transaction=>transaction<0)
-                                      .reduce((acc,transaction)=>(acc=acc-transaction),0);
+                                      .reduce((acc,transaction)=>(acc=acc-transaction),0).toFixed(2);
     return (
         <div className='inc-exp-container'>
             <div className='income'>

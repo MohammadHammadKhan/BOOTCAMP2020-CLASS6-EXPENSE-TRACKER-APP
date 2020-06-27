@@ -7,7 +7,7 @@ function Balance(){
   
     const amounts = transactions[0].map(transaction => transaction.transactionAmount);
 
-    const total = amounts.reduce((acc, item) => (acc = acc + item), 0);
+    const total = amounts.reduce((acc, item) => (acc = acc + item), 0).toFixed(2);
 
     return(
         <div >
